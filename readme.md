@@ -7,6 +7,8 @@
 
 ## Running petclinic locally
 
+This project packages a restributable Maven Wrapper. Maven installation is not required to run this project.
+
 Clone the repository and run the packaged Maven Wrapper as follows:
 ```
 git clone https://github.com/savishy/spring-petclinic.git
@@ -22,7 +24,7 @@ On Windows:
 mvnw.cmd tomcat7:run
 ```
 
-You can also run using Maven as `mvn | mvn.cmd tomcat7:run`
+If you have an install of Maven, you can also run using Maven as `mvn | mvn.cmd tomcat7:run`
 
 You can then access petclinic here: http://localhost:9966/petclinic/
 
