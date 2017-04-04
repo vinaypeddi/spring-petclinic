@@ -6,11 +6,23 @@
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
 
 ## Running petclinic locally
+
+Clone the repository and run the packaged Maven Wrapper as follows:
 ```
-	git clone https://github.com/savishy/spring-petclinic.git
-	cd spring-petclinic
-	./mvnw tomcat7:run
+git clone https://github.com/savishy/spring-petclinic.git
+cd spring-petclinic
 ```
+On Linux/Cygwin:
+```
+./mvnw tomcat7:run
+```
+
+On Windows:
+```
+mvnw.cmd tomcat7:run
+```
+
+You can also run using Maven as `mvn | mvn.cmd tomcat7:run`
 
 You can then access petclinic here: http://localhost:9966/petclinic/
 
