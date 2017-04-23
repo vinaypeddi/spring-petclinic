@@ -1,0 +1,56 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+<!-- We are defining a HTTP Proxy that Maven can use to access the internet. -->
+<!-- Maven needs internet access to be able to download dependent libraries -->
+
+  <proxies>    
+    <proxy>
+    <id>some-id</id>
+    <active>true</active>
+    <protocol>http</protocol>
+    <username>PROXY_USERNAME</username>
+    <password>PROXY_PASSWORD</password>
+    <host>PROXY_URL</host>
+    <port>PROXY_PORT</port>
+    </proxy>
+  </proxies>
+
+  <!--define a profile where maven repos can be specified -->
+  <!--make the profile active all the time -->
+  
+  <activeProfiles>
+    <activeProfile>insecurecentral</activeProfile>
+  </activeProfiles>
+  
+  <!-- specify HTTP sites instead of HTTPS (this is insecure) -->
+  
+  <profiles>  
+    <profile>
+      <id>insecurecentral</id>
+      <!--Override the repository (and pluginRepository) "central" from the Maven Super POM -->
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://repo1.maven.org/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://repo1.maven.org/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+</settings>
+
+
