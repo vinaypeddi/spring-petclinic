@@ -4,9 +4,17 @@
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
 
 ## Running petclinic locally
+
+Clone the repo:
+
 ```
 	git clone https://github.com/savishy/spring-petclinic.git
 	cd spring-petclinic
+```
+
+You can use the built-in Maven Wrapper to run Petclinic:
+
+```
 	./mvnw tomcat7:run
 ```
 
@@ -94,10 +102,10 @@ File -> Import -> Maven -> Existing Maven project
   <tr>
     <td>Dandelion-datatables</td>
     <td>
-      <a href="/src/main/webapp/WEB-INF/jsp/owners/ownersList.jsp">ownersList.jsp</a> 
-      <a href="/src/main/webapp/WEB-INF/jsp/vets/vetList.jsp">vetList.jsp</a> 
+      <a href="/src/main/webapp/WEB-INF/jsp/owners/ownersList.jsp">ownersList.jsp</a>
+      <a href="/src/main/webapp/WEB-INF/jsp/vets/vetList.jsp">vetList.jsp</a>
       <a href="/src/main/java/org/springframework/samples/petclinic/PetclinicInitializer.java">PetclinicInitializer.java</a>
-      <a href="/src/main/resources/dandelion/datatables/datatables.properties">datatables.properties</a> 
+      <a href="/src/main/resources/dandelion/datatables/datatables.properties">datatables.properties</a>
    </td>
   </tr>
   <tr>
@@ -216,7 +224,3 @@ Here is a list of them:
 The [issue tracker](https://github.com/spring-projects/spring-petclinic/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
 
 For pull requests, editor preferences are available in the [editor config](https://github.com/spring-projects/spring-petclinic/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-
-
