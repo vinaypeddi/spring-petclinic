@@ -32,21 +32,65 @@ If you have an install of Maven, you can also run using Maven as `mvn | mvn.cmd 
 
 You can then access petclinic here: http://localhost:9966/petclinic/
 
-## In case you find a bug/suggested improvement for Spring Petclinic
-Our issue tracker is available here: https://github.com/spring-projects/spring-petclinic/issues
+## Changing the default port
 
+The application runs on port 9966 by default. You can change the port in [pom.xml](pom.xml). 
+
+Search for the line `<port>9966</port>` and change it as needed.
+
+## In case you find a bug/suggested improvement for Spring Petclinic
+The issue tracker is available here: https://github.com/spring-projects/spring-petclinic/issues
 
 ## Database configuration
 
-In its default configuration, Petclinic uses an in-memory database (HSQLDB) which
-gets populated at startup with data. A similar setup is provided for MySql in case a persistent database configuration is needed.
-Note that whenever the database type is changed, the data-access.properties file needs to be updated and the mysql-connector-java artifact from the pom.xml needs to be uncommented.
+* In its default configuration, Petclinic uses an in-memory database (HSQLDB) which gets populated at startup with data. 
+* A similar setup is provided for MySql in case a persistent database configuration is needed.
+
+### Start a MySQL Server
 
 You may start a MySql database with docker:
 
 ```
 docker run -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
 ```
+
+### Modify `pom.xml`
+
+Make sure the `mysql-connector-java` artifact in [pom.xml](pom.xml) is uncommented:
+
+```
+        <dependency>
+             <groupId>mysql</groupId>
+             <artifactId>mysql-connector-java</artifactId>
+             <version>${mysql-driver.version}</version>
+        </dependency>
+```
+
+### Modify `data-access.properties`
+
+Edit the file [src/main/resources/spring/data-access.properties](src/main/resources/spring/data-access.properties).
+
+Make sure it has the following values:
+
+* Note: here its assumed the DB is at 127.0.0.1 with port 3306.
+* Note: It's assumed the DB user is root with password `petclinic`.
+
+```
+jdbc.initLocation=classpath:db/mysql/initDB.sql
+jdbc.dataLocation=classpath:db/mysql/populateDB.sql
+
+jpa.showSql=true
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://127.0.0.1:3306/petclinic?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=root
+jdbc.password=petclinic
+
+# Property that determines which database to use with an AbstractJpaVendorAdapter
+jpa.database=MYSQL
+```
+
+Make sure to compile and run the application.
 
 ## Working with Petclinic in Eclipse/STS
 
