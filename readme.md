@@ -10,12 +10,14 @@
 Clone the repo:
 
 ```
-	git clone https://github.com/savishy/spring-petclinic.git
+	git clone https://github.com/savishy/spring-petclinic
 	cd spring-petclinic
 ```
 This project packages a restributable Maven Wrapper. Maven installation is not required to run this project.
 
 You can use the built-in Maven Wrapper to run Petclinic:
+
+:exclamation: Note, Java Development Kit must be present and JAVA_HOME environment variable must be set.
 
 On Linux
 ```
