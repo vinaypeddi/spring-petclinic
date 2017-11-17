@@ -1,11 +1,20 @@
-# Using tomcat8 and jre7 base image.
-FROM tomcat:8.0
+# JDK application 
+FROM openjdk:8u131-jdk-alpine
 
-# tomcat-users XML with manager account configuration.
-COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+# Labels allow for metadata and visibility
+LABEL com.poc.maintainer="Vish"
+LABEL com.poc.description="Petclinic Application JAR"
 
-# Petclinic WAR needs to be present in this dir.
-COPY petclinic.war /usr/local/tomcat/webapps/petclinic.war
+# Mounting app dir for persistence
+VOLUME /app
 
-# default server.xml forwards all requests on 8080 to the WAR.
-EXPOSE 8080
+# Application and configuration
+ADD petclinic.jar /app/petclinic.jar
+ADD application.properties /app/application.properties
+ENV JAVA_OPTS=""
+
+# Spring app needs to take local application.properties
+ENV SPRING_OPTS="--spring.config.location=/app/application.properties"
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -jar /app/petclinic.jar $SPRING_OPTS" ]
+
+

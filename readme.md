@@ -1,4 +1,4 @@
-# Spring PetClinic Sample Application [![Build Status](https://travis-ci.org/spring-projects/spring-petclinic.png?branch=master)](https://travis-ci.org/spring-projects/spring-petclinic/)
+# Spring PetClinic Sample Application 
 
 *Note: This project was forked from [spring-projects/spring-petclinic](http://github.com/spring-projects/spring-petclinic) to be used as a sample application for various Knowledge sessions.*
 
@@ -12,8 +12,8 @@ Clone the repo:
 ```
 	git clone https://github.com/savishy/spring-petclinic
 	cd spring-petclinic
-<<<<<<< HEAD
 ```
+
 This project packages a restributable Maven Wrapper. Maven installation is not required to run this project.
 
 You can use the built-in Maven Wrapper to run Petclinic:
@@ -22,27 +22,23 @@ You can use the built-in Maven Wrapper to run Petclinic:
 
 On Linux
 ```
-	./mvnw tomcat7:run
+	./mvnw spring-boot:run
 ```
 
 On Windows:
 ```
-mvnw.cmd tomcat7:run
+mvnw.cmd spring-boot:run
 ```
 
-If you have an install of Maven, you can also run using Maven as `mvn | mvn.cmd tomcat7:run`
+If you have an install of Maven, you can also run using Maven as `mvn | mvn.cmd spring-boot:run`
 
 
-You can then access petclinic here: http://localhost:9966/petclinic/
+You can then access petclinic here: http://localhost:8080/
 
 ## Changing the default port
 
-The application runs on port 9966 by default. You can change the port in [pom.xml](pom.xml). 
+The application runs on port 8080 by default. You can change the port via a Spring Boot command-line argument.
 
-Search for the line `<port>9966</port>` and change it as needed.
-
-## In case you find a bug/suggested improvement for Spring Petclinic
-The issue tracker is available here: https://github.com/spring-projects/spring-petclinic/issues
 
 ## Database configuration
 
