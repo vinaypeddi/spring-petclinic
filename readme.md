@@ -12,6 +12,7 @@ Clone the repo:
 ```
 	git clone https://github.com/savishy/spring-petclinic
 	cd spring-petclinic
+<<<<<<< HEAD
 ```
 This project packages a restributable Maven Wrapper. Maven installation is not required to run this project.
 
@@ -50,7 +51,7 @@ The issue tracker is available here: https://github.com/spring-projects/spring-p
 
 ### Start a MySQL Server
 
-You may start a MySql database with docker:
+You could start a MySql database with docker:
 
 ```
 docker run -e MYSQL_ROOT_PASSWORD=petclinic -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
@@ -120,6 +121,7 @@ File -> Import -> Maven -> Existing Maven project
 
 ## Looking for something in particular?
 
+<<<<<<< HEAD
 <table>
   <tr>
     <th width="300px">Java Config</th><th width="300px"></th>
@@ -239,6 +241,36 @@ File -> Import -> Maven -> Existing Maven project
       <a href="https://github.com/whimet/spring-petclinic">See here</a></td>
   </tr>
 </table>
+=======
+|Spring Boot Configuration | Class or Java property files  |
+|--------------------------|---|
+|The Main Class | [PetClinicApplication](https://github.com/spring-projects/spring-petclinic/blob/master/src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java) |
+|Properties Files | [application.properties](https://github.com/spring-projects/spring-petclinic/blob/master/src/main/resources) |
+|Caching | [CacheConfig](https://github.com/spring-projects/spring-petclinic/blob/master/src/main/java/org/springframework/samples/petclinic/system/CacheConfig.java) |
+
+## Interesting Spring Petclinic branches and forks
+
+The Spring Petclinic master branch in the main
+[spring-projects](https://github.com/spring-projects/spring-petclinic)
+GitHub org is the "canonical" implementation, currently based on
+Spring Boot and Thymeleaf. There are quite a few forks in a special
+GitHub org [spring-petclinic](https://github.com/spring-petclinic). If
+you have a special interest in a different technology stack that could
+be used to implement the Pet Clinic then please join the community
+there.
+
+| Link                               | Main technologies |
+|------------------------------------|-------------------|
+| [spring-framework-petclinic][]     | Spring Framework XML configuration, JSP pages, 3 persistence layers: JDBC, JPA and Spring Data JPA |
+| [javaconfig branch][]              | Same frameworks as the [spring-framework-petclinic][] but with Java Configuration instead of XML |
+| [spring-petclinic-angularjs][]     | AngularJS 1.x, Spring Boot and Spring Data JPA |
+| [spring-petclinic-angular][]       | Angular 4 front-end of the Petclinic REST API [spring-petclinic-rest][] |
+| [spring-petclinic-microservices][] | Distributed version of Spring Petclinic built with Spring Cloud |
+| [spring-petclinic-reactjs][]       | ReactJS (with TypeScript) and Spring Boot |
+| [spring-petclinic-graphql][]       | GraphQL version based on React Appolo, TypeScript and GraphQL Spring boot starter |
+| [spring-petclinic-kotlin][]        | Kotlin version of [spring-petclinic][] |
+| [spring-petclinic-rest][]          | Backend REST API |
+>>>>>>> c36452a2c34443ae26b4ecbba4f149906af14717
 
 
 ## Interaction with other open source projects
@@ -246,39 +278,33 @@ File -> Import -> Maven -> Existing Maven project
 One of the best parts about working on the Spring Petclinic application is that we have the opportunity to work in direct contact with many Open Source projects. We found some bugs/suggested improvements on various topics such as Spring, Spring Data, Bean Validation and even Eclipse! In many cases, they've been fixed/implemented in just a few days.
 Here is a list of them:
 
-<table>
-  <tr>
-    <th width="300px">Name</th>
-    <th width="300px"> Issue </th>
-  </tr>
-
-  <tr>
-    <td>Spring JDBC: simplify usage of NamedParameterJdbcTemplate</td>
-    <td> <a href="https://jira.springsource.org/browse/SPR-10256"> SPR-10256</a> and <a href="https://jira.springsource.org/browse/SPR-10257"> SPR-10257</a> </td>
-  </tr>
-  <tr>
-    <td>Bean Validation / Hibernate Validator: simplify Maven dependencies and backward compatibility</td>
-    <td>
-      <a href="https://hibernate.atlassian.net/browse/HV-790"> HV-790</a> and <a href="https://hibernate.atlassian.net/browse/HV-792"> HV-792</a>
-      </td>
-  </tr>
-  <tr>
-    <td>Spring Data: provide more flexibility when working with JPQL queries</td>
-    <td>
-      <a href="https://jira.springsource.org/browse/DATAJPA-292"> DATAJPA-292</a>
-      </td>
-  </tr>  
-  <tr>
-    <td>Eclipse: validation bug when working with .tag/.tagx files (has only been fixed for Eclipse 4.3 (Kepler)). <a href="https://github.com/spring-projects/spring-petclinic/issues/14">See here for more details.</a></td>
-    <td>
-      <a href="https://issuetracker.springsource.com/browse/STS-3294"> STS-3294</a>
-    </td>
-  </tr>    
-</table>
+| Name | Issue |
+|------|-------|
+| Spring JDBC: simplify usage of NamedParameterJdbcTemplate | [SPR-10256](https://jira.springsource.org/browse/SPR-10256) and [SPR-10257](https://jira.springsource.org/browse/SPR-10257) |
+| Bean Validation / Hibernate Validator: simplify Maven dependencies and backward compatibility |[HV-790](https://hibernate.atlassian.net/browse/HV-790) and [HV-792](https://hibernate.atlassian.net/browse/HV-792) |
+| Spring Data: provide more flexibility when working with JPQL queries | [DATAJPA-292](https://jira.springsource.org/browse/DATAJPA-292) |
 
 
 # Contributing
 
 The [issue tracker](https://github.com/spring-projects/spring-petclinic/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
 
+<<<<<<< HEAD
 For pull requests, editor preferences are available in the [editor config](https://github.com/spring-projects/spring-petclinic/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+=======
+For pull requests, editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>. If you have not previously done so, please fill out and submit the https://cla.pivotal.io/sign/spring[Contributor License Agreement].
+
+# License
+
+The Spring PetClinic sample application is released under version 2.0 of the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+
+[spring-petclinic]: https://github.com/spring-projects/spring-petclinic
+[spring-framework-petclinic]: https://github.com/spring-petclinic/spring-framework-petclinic
+[spring-petclinic-angularjs]: https://github.com/spring-petclinic/spring-petclinic-angularjs 
+[javaconfig branch]: https://github.com/spring-petclinic/spring-framework-petclinic/tree/javaconfig
+[spring-petclinic-angular]: https://github.com/spring-petclinic/spring-petclinic-angular
+[spring-petclinic-microservices]: https://github.com/spring-petclinic/spring-petclinic-microservices
+[spring-petclinic-reactjs]: https://github.com/spring-petclinic/spring-petclinic-reactjs
+[spring-petclinic-graphql]: https://github.com/spring-petclinic/spring-petclinic-graphql
+[spring-petclinic-kotlin]: https://github.com/spring-petclinic/spring-petclinic-kotlin
+>>>>>>> c36452a2c34443ae26b4ecbba4f149906af14717
