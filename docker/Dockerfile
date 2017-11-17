@@ -5,7 +5,6 @@ FROM openjdk:8u131-jdk-alpine
 LABEL com.poc.maintainer="Vish"
 LABEL com.poc.description="Petclinic Application JAR"
 
-# Mounting app dir for persistence
 VOLUME /app
 
 # Application and configuration
