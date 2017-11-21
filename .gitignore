@@ -6,5 +6,5 @@ target/*
 *.iml
 /target
 generated/
-**/*.war
+**/*.jar
 _site/
